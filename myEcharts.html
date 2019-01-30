@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
     <!--引入ECharts-->
     <script src="js/echarts.js"></script>
     <title>echartsDemo</title>
 </head>
 <body>
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-<div id="main" style="width: 600px;height:400px;"></div>
+<div class="echarts" id="main" style="width: 600px;height:400px;"></div>
+<div class="echarts" id="main1" style="width: 600px;height:400px;"></div>
+<div class="echarts" id="main2" style="width: 600px;height:400px;"></div>
+<div class="echarts" id="main3" style="width: 600px;height:400px;"></div>
+<div class="echarts" id="main4" style="width: 600px;height:400px;"></div>
 <script src="data/EchartTypeOption.js"></script>
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
@@ -19,6 +24,38 @@
     option.title.text = title;
     option.title.subtext = '子标题';
     option.title
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main1'));
+    // 指定图表的配置项和数据
+    var option = EchartType.line.BasicLineChart.option;
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main2'));
+    // 指定图表的配置项和数据
+    var option = EchartType.line.BasicAreaChart.option;
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main3'));
+    // 指定图表的配置项和数据
+    var option = EchartType.line.smoothLineChart.option;
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main4'));
+    // 指定图表的配置项和数据
+    var option = EchartType.line.StackedAreaChart.option;
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
 </script>
